@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 import "hardhat/console.sol";
 
 contract Dapp {
-  string public str = 'hardhat-dapp-starter';
+  string private str = 'Hardhat Dapp Starter';
 
   function getStr () public view returns (string memory) {
     console.log("log: str is equal to", str);

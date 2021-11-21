@@ -1,5 +1,4 @@
 module.exports = {
-  root: './dapp-ui',
   mount: {
     /* ... */
   },
@@ -13,6 +12,15 @@ module.exports = {
     tailwindConfig: './tailwind.config.js'
   },
   buildOptions: {
-    jsxInject: 'import React from \'react\''
-  }
+    jsxInject: 'import React, { useEffect } from \'react\''
+  },
+  root: './dapp-ui',
+  workspaceRoot: './',
+  routes: [
+    {
+      match: 'routes',
+      src: '.*',
+      dest: '/index.html'
+    }
+  ]
 }
