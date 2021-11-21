@@ -1,4 +1,5 @@
 .DS_Store
 dapp-contract/artifacts
 dapp-contract/cache
+dapp-ui/build
 node_modules
