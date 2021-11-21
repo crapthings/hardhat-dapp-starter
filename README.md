@@ -9,6 +9,19 @@ npm i
 npm run dev
 ```
 
+### FAQ
+
+- connect to your contract address
+
+```bash
+contract:compile
+contract:deploy
+```
+
+after you run above command, you will get "your dapp address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512".
+then copy your dapp address, replace the "dappAddr" in stores/index.js with new one.
+
+
 ### CLI
 
 ```json
@@ -26,6 +39,8 @@ npm run dev
 ### Docs
 
 [Hardhat](https://hardhat.org/) Ethereum development environment for professionals.
+
+[Snowpack](https://www.snowpack.dev/) Snowpack is a lightning-fast frontend build tool, designed for the modern web.
 
 [Ethers](https://docs.ethers.io/) The ethers.js library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem.
 
@@ -46,3 +61,7 @@ npm run dev
 [Lodash](https://lodash.com/) A modern JavaScript utility library delivering modularity, performance & extras.
 
 [Day.js](https://day.js.org/) Fast 2kB alternative to Moment.js with the same modern API.
+
+### TODOS
+
+- [ ] Load contract address automatically
