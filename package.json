@@ -1,0 +1,13 @@
+{
+  "name": "hardhat-dapp-starter",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "contract:compile": "npx hardhat compile"
+  },
+  "devDependencies": {
+    "hardhat": "^2.6.8",
+    "snowpack": "^3.8.8",
+    "standard": "^16.0.4"
+  }
+}
