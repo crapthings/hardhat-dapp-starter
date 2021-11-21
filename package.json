@@ -9,7 +9,7 @@
     "contract:test": "npx hardhat test",
     "ui:dev": "snowpack dev",
     "ui:build": "snowpack build",
-    "dev": "concurrently \"npm run contract:dev\" \"npm run ui:dev\""
+    "dev": "concurrently \"npm run contract:dev\" \"npm run ui:dev --secure\""
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",

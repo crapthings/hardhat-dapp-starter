@@ -1,0 +1,8 @@
+{
+  "name": "Hardhat Dapp Starter",
+  "short_name": "HDS",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A dapp starter kit with modern workflow."
+}

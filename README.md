@@ -13,14 +13,24 @@ npm run dev
 
 - connect to your contract address
 
+run command to get your dapp address.
+
 ```bash
 contract:compile
 contract:deploy
 ```
 
-after you run above command, you will get "your dapp address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512".
-then copy your dapp address, replace the "dappAddr" in stores/index.js with new one.
+```bash
+"your dapp address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+```
 
+then copy and replace the "dappAddr" in stores/index.js with new one.
+
+- generating localhost ssl certificate
+
+```bash
+npx devcert-cli generate localhost
+```
 
 ### CLI
 
