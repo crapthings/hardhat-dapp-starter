@@ -1,6 +1,6 @@
 # Hardhat Dapp Starter
 
-### Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/crapthings/hardhat-dapp-starter
@@ -9,9 +9,15 @@ npm i
 npm run dev
 ```
 
-### FAQ
+## Requirements
 
-- connect to your contract address
+> You should have MetaMask Installed (MetaMask)[https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn]
+
+[MetaMask](https://metamask.io/) A crypto wallet & gateway to blockchain apps.
+
+## FAQ
+
+#### connect to your contract address
 
 run command to get your dapp address.
 
@@ -26,13 +32,13 @@ contract:deploy
 
 then copy and replace the "dappAddr" in stores/index.js with new one.
 
-- generating localhost ssl certificate
+#### generating localhost ssl certificate
 
 ```bash
 npx devcert-cli generate localhost
 ```
 
-### CLI
+## CLI
 
 ```json
 {
@@ -46,7 +52,7 @@ npx devcert-cli generate localhost
 }
 ```
 
-### Docs
+## Docs
 
 [Hardhat](https://hardhat.org/) Ethereum development environment for professionals.
 
@@ -72,6 +78,8 @@ npx devcert-cli generate localhost
 
 [Day.js](https://day.js.org/) Fast 2kB alternative to Moment.js with the same modern API.
 
-### TODOS
+## TODOS
 
 - [ ] Load contract address automatically
+- [ ] Add IPFS support
+- [ ] Add backend for off-chain data
