@@ -11,7 +11,7 @@ npm run dev
 
 ## Requirements
 
-> You should have MetaMask Installed (MetaMask)[https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn]
+> You should have MetaMask Installed [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)
 
 [MetaMask](https://metamask.io/) A crypto wallet & gateway to blockchain apps.
 
@@ -19,7 +19,7 @@ npm run dev
 
 #### connect to your contract address
 
-run command to get your dapp address.
+> run command to get your dapp address.
 
 ```bash
 contract:compile
@@ -30,7 +30,7 @@ contract:deploy
 "your dapp address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
 ```
 
-then copy and replace the "dappAddr" in stores/index.js with new one.
+> then copy and replace the "dappAddr" in stores/index.js with new one.
 
 #### generating localhost ssl certificate
 

@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom'
 
+import Fallback from './components/fallback'
 import Layout from './components/layout'
 import Home from './composites'
 import About from './composites/about'
@@ -22,15 +23,5 @@ function Router () {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
-}
-
-function Fallback () {
-  const onClick = () => window.open('https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en')
-
-  return (
-    <div className='grid h-screen place-content-center text-red-900' onClick={onClick}>
-      <button className='btn btn-link text-red-900'>MetaMask required</button>
-    </div>
   )
 }
