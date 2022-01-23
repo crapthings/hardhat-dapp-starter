@@ -1,4 +1,15 @@
 import { render } from 'react-dom'
-import Router from './router'
+import Fallback from './components/fallback'
 
-render(Router(), document.querySelector('.app'))
+(() => {
+  const app = document.querySelector('.app')
+
+  if (!window.ethereum) {
+    render(Fallback(), app)
+    return
+  }
+
+  import('./router').then((module) => {
+    render(module.default(), app)
+  })
+})()

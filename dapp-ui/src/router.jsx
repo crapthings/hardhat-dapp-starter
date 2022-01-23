@@ -4,16 +4,11 @@ import {
   Route,
 } from 'react-router-dom'
 
-import Fallback from './components/fallback'
 import Layout from './components/layout'
 import Home from './composites'
 import About from './composites/about'
 
-export default window.ethereum?.isMetaMask
-  ? Router
-  : Fallback
-
-function Router () {
+export default function Router () {
   return (
     <BrowserRouter>
       <Routes>
