@@ -6,6 +6,6 @@ describe('Dapp contract', function () {
     const Dapp = await ethers.getContractFactory('Dapp')
     const hardhatToken = await Dapp.deploy()
     const str = await hardhatToken.getStr()
-    expect(str).to.equal('hardhat-dapp-starter')
+    expect(str).to.equal('Hardhat Dapp Starter')
   })
 })

@@ -22,15 +22,12 @@ npm run dev
 > run command to get your dapp address.
 
 ```bash
-contract:compile
-contract:deploy
+npm run dev
+npm run contract:compile
+npm run contract:deploy
 ```
 
-```bash
-"your dapp address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
-```
-
-> then copy and replace the "dappAddr" in stores/index.js with new one.
+> find your contract addresses with dapp-ui/src/contracts.json
 
 #### generating localhost ssl certificate
 
@@ -80,6 +77,6 @@ npx devcert-cli generate localhost
 
 ## TODOS
 
-- [ ] Load contract address automatically
+- [x] Load contract address automatically
 - [ ] Add IPFS support
 - [ ] Add backend for off-chain data

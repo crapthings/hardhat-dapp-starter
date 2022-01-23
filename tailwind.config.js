@@ -1,7 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./dapp-ui/**/*.html', './dapp-ui/**/*.{js,jsx}'],
-  darkMode: false,
+  content: ['./dapp-ui/**/*.html', './dapp-ui/**/*.{js,jsx}'],
   theme: {
     extend: {}
   },
