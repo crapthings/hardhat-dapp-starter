@@ -27,7 +27,8 @@ const ethereum = window.ethereum
 
 // A Provider (in ethers) is a class which provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
 
-const provider = new ethers.providers.Web3Provider(ethereum)
+// The "any" network will allow spontaneous network changes
+const provider = new ethers.providers.Web3Provider(ethereum, 'any')
 
 // A Signer is a class which (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
 
@@ -38,6 +39,16 @@ const signer = provider.getSigner()
 const dappContract = new ethers.Contract(ContractAddrs.DappAddr, DappContract.abi, signer)
 
 // provider events
+
+// Force page refreshes on network changes
+provider.on('network', (newNetwork, oldNetwork) => {
+  // When a Provider makes its initial connection, it emits a "network"
+  // event with a null oldNetwork along with the newNetwork. So, if the
+  // oldNetwork exists, it represents a changing network
+  if (oldNetwork) {
+    window.location.reload()
+  }
+})
 
 ethereum.on('accountsChanged', setAccount)
 

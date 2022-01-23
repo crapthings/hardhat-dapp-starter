@@ -35,6 +35,14 @@ npm run contract:deploy
 npx devcert-cli generate localhost
 ```
 
+#### nonce too high
+
+> if you see this, go to metamask "settings > advanced > reset account"
+
+```
+MetaMask - RPC Error: [ethjs-query] while formatting outputs from RPC '{"value":{"code":-32603,"data":{"code":-32000,"message":"Nonce too high. Expected nonce to be 1 but got 3. Note that transactions can't be queued when automining."}}}' {code: -32603, message: `[ethjs-query] while formatting outputs from RPC '{…ransactions can't be queued when automining."}}}'`}
+```
+
 ## CLI
 
 ```json
