@@ -19,7 +19,7 @@ npm run dev
 
 #### connect to your contract address
 
-> run command to get your dapp address.
+> command to run your dapp environment
 
 ```bash
 npm run dev
@@ -27,7 +27,7 @@ npm run contract:compile
 npm run contract:deploy
 ```
 
-> find your contract addresses with dapp-ui/src/contracts.json
+> find your contract addresses with dapp-ui/src/contracts.json after deploy
 
 #### generating localhost ssl certificate
 
