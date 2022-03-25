@@ -2,4 +2,5 @@
 dapp-contract/artifacts
 dapp-contract/cache
 dapp-ui/build
+dapp-ui/static/abi
 node_modules

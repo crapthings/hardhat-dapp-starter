@@ -1,14 +1,18 @@
 import { ethers } from 'ethers'
 import create from 'zustand'
 
-import ContractAddrs from '../contracts.json'
-import DappContract from '../../../dapp-contract/artifacts/contracts/Dapp.sol/Dapp.json'
+const ethereum = window.ethereum
 
 const stores = create((set) => ({
+  init: false,
   account: null,
 
   str: null,
   balance: 0,
+
+  async connect () {
+    ethereum.request({ method: 'eth_requestAccounts' })
+  },
 
   async getStr () {
     set({ str: await dappContract.getStr() })
@@ -23,8 +27,6 @@ const stores = create((set) => ({
   },
 }))
 
-const ethereum = window.ethereum
-
 // A Provider (in ethers) is a class which provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
 
 // The "any" network will allow spontaneous network changes
@@ -33,10 +35,6 @@ const provider = new ethers.providers.Web3Provider(ethereum, 'any')
 // A Signer is a class which (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
 
 const signer = provider.getSigner()
-
-// A Contract is an abstraction which represents a connection to a specific contract on the Ethereum Network, so that applications can use it like a normal JavaScript object.
-
-const dappContract = new ethers.Contract(ContractAddrs.DappAddr, DappContract.abi, signer)
 
 // provider events
 
@@ -50,17 +48,42 @@ provider.on('network', (newNetwork, oldNetwork) => {
   }
 })
 
-ethereum.on('accountsChanged', setAccount)
+ethereum.on('accountsChanged', reloadPage)
+ethereum.on('chainChanged', reloadPage)
 
-ethereum.request({ method: 'eth_accounts' }).then(setAccount)
+// A Contract is an abstraction which represents a connection to a specific contract on the Ethereum Network, so that applications can use it like a normal JavaScript object.
 
-// contract events
+let dappContract
 
-dappContract.on('changeStr', (str) => {
-  stores.setState({ str })
-})
+Promise.all([
+  fetch('./static/contracts.json').then((resp) => resp.json()),
+  fetch('./static/abi/Dapp.json').then((resp) => resp.json())
+]).then(init)
+
+async function init ([
+  ContractAddrs,
+  DappContract
+]) {
+  // init contracts
+  dappContract = new ethers.Contract(ContractAddrs.DappAddr, DappContract.abi, signer)
+
+  // contract events
+  dappContract.on('changeStr', (str) => {
+    console.log('changeStr', str)
+    stores.setState({ str })
+  })
+
+  stores.setState({ init: true })
+
+  ethereum.request({ method: 'eth_accounts' }).then(setAccount)
+}
+
+function reloadPage () {
+  window.location.reload()
+}
 
 function setAccount ([account]) {
+  if (!account) return
   stores.setState({ account })
 }
 

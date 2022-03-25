@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   buildOptions: {
-    jsxInject: 'import React, { useEffect } from \'react\''
+    jsxInject: 'import React, { useState, useEffect, useLayoutEffect, useRef } from \'react\''
   },
   root: './dapp-ui',
   workspaceRoot: './',

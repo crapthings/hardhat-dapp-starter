@@ -9,8 +9,9 @@ export default function () {
   const setStr = stores((state) => state.setStr)
 
   useEffect(() => {
+    if (!account) return
     getStr()
-  }, [])
+  }, [account])
 
   const onClick = () => {
     const pmt = prompt('input text')
